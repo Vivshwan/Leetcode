@@ -1,27 +1,22 @@
 class Solution {
 public:
+    bool isVowel (char c){
+        char ch = tolower(c);
+        return ch =='a' || ch =='e'|| ch =='i' || ch =='o' || ch =='u' ;
+    }
     string reverseVowels(string s) {
         int n =s.size();
         int i =0;
-        string vowel="AaEeIiOoUu";
-        string ans="";
-        for( char c:s){
-            if (vowel.find(c) != string::npos){
-                ans+=c;
-            }
-        }
-        int size= ans.size();
-        int j =size -1;
-        while(i<j){
-            swap(ans[i],ans[j]);
+        int j = n -1;
+        while (i<j){
+            
+            while(i<j && !isVowel(s[i])) i++;
+            while(i<j && !isVowel(s[j])) j--;
+            
+            swap(s[i],s[j]);
             i++;
             j--;
-        }
-        int idx=0;
-        for (int i = 0; i < s.length(); i++) {
-            if (vowel.find(s[i]) != string::npos) {
-                s[i] = ans[idx++];
-            }
+            
         }
         return s;
     }
