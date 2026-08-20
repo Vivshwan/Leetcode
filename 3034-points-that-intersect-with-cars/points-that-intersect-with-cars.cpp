@@ -1,7 +1,7 @@
 class Solution {
 public:
     int numberOfPoints(vector<vector<int>>& nums) {
-        vector<int> diff(102);
+        vector<int> diff(102,0);
 
         for(auto &cars : nums){
             int start = cars[0];
