@@ -2,7 +2,7 @@ class Solution {
 public:
     void allsubset(vector<int>& nums, vector<int> ans, int idx , vector<vector<int>>& storesubset){
         if(idx == nums.size()){
-            storesubset.push_back({ans});
+            storesubset.push_back(ans);
             return;
         }
         //inclusion 
