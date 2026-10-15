@@ -25,16 +25,16 @@ public:
         return true;
     }
     bool sudokosolver(vector<vector<char>>& board , int row , int col ){
-        if(row == 9){
+        if(row == 9){  //base class
             return true;
         }
         
         int nextrow=row;
-            int nextcol=col+1;
-            if(nextcol==9){
+        int nextcol=col+1;
+        if(nextcol==9){
                 nextrow=row+1;
                 nextcol=0;
-            }
+        }
         //check cell is empty or not
         if(board[row][col] !=  '.'){
             return sudokosolver(board , nextrow ,nextcol);
